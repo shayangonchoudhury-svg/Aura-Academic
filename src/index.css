@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  background-color: #030712;
+  color: #f3f4f6;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(3, 7, 18, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(107, 251, 154, 0.15);
+  border-radius: 9999px;
+  border: 2px solid rgba(3, 7, 18, 0.5);
+  transition: all 0.3s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 251, 154, 0.3);
+}
+
+.mesh-gradient {
+  background: 
+    radial-gradient(at 0% 0%, rgba(107, 251, 154, 0.05) 0px, transparent 40%),
+    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.06) 0px, transparent 40%),
+    radial-gradient(at 50% 50%, #030712 0px, transparent 100%),
+    radial-gradient(at 80% 80%, rgba(59, 130, 246, 0.04) 0px, transparent 40%),
+    radial-gradient(at 20% 80%, rgba(139, 92, 246, 0.05) 0px, transparent 40%);
+}
+
+/* Glassmorphism improvements inspired by Apple and Linear */
+.glass-card {
+  background: rgba(17, 24, 39, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s;
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(107, 251, 154, 0.25);
+  box-shadow: 
+    0 10px 40px rgba(107, 251, 154, 0.05),
+    0 4px 30px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.glass-card-purple-hover:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 
+    0 10px 40px rgba(139, 92, 246, 0.06),
+    0 4px 30px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.glass-dock {
+  background: rgba(10, 15, 30, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 -10px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 2px rgba(255, 255, 255, 0.05);
+}
+
+/* Micro glow effects */
+.glow-pulse {
+  animation: glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { filter: drop-shadow(0 0 10px rgba(107, 251, 154, 0.25)); }
+  to { filter: drop-shadow(0 0 25px rgba(107, 251, 154, 0.5)); }
+}
+
+.glow-pulse-purple {
+  animation: glow-purple 4s ease-in-out infinite alternate;
+}
+
+@keyframes glow-purple {
+  from { filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.25)); }
+  to { filter: drop-shadow(0 0 25px rgba(139, 92, 246, 0.5)); }
+}
+
+/* Sound spectrum indicator animations */
+@keyframes soundwave-1 {
+  0%, 100% { height: 4px; }
+  50% { height: 18px; }
+}
+@keyframes soundwave-2 {
+  0%, 100% { height: 6px; }
+  50% { height: 24px; }
+}
+@keyframes soundwave-3 {
+  0%, 100% { height: 5px; }
+  50% { height: 20px; }
+}
+@keyframes soundwave-4 {
+  0%, 100% { height: 7px; }
+  50% { height: 16px; }
+}
+@keyframes soundwave-5 {
+  0%, 100% { height: 3px; }
+  50% { height: 22px; }
+}
+
+.animate-soundwave-1 { animation: soundwave-1 0.7s infinite ease-in-out; }
+.animate-soundwave-2 { animation: soundwave-2 0.9s infinite ease-in-out 0.15s; }
+.animate-soundwave-3 { animation: soundwave-3 0.6s infinite ease-in-out 0.3s; }
+.animate-soundwave-4 { animation: soundwave-4 0.8s infinite ease-in-out 0.05s; }
+.animate-soundwave-5 { animation: soundwave-5 1.0s infinite ease-in-out 0.2s; }
+
+/* Aurora pulsing orbs */
+@keyframes aurora-1 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+@keyframes aurora-2 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-40px, 40px) scale(1.15); }
+}
+
+.animate-aurora-1 {
+  animation: aurora-1 15s infinite alternate ease-in-out;
+}
+
+.animate-aurora-2 {
+  animation: aurora-2 18s infinite alternate ease-in-out;
+}
+
+/* Subtle background slow float */
+.animate-slow-float {
+  animation: float-slow 8s ease-in-out infinite alternate;
+}
+
+@keyframes float-slow {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-15px) rotate(2deg); }
+}
+
